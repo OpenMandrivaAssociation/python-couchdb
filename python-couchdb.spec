@@ -11,7 +11,8 @@ Source0:        http://pypi.python.org/packages/source/C/CouchDB/%{srcname}-%{ve
 Patch0:         python-couchdb-shebang.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:      noarch
-BuildRequires:  python-setuptools python-devel
+%py_requires -d
+BuildRequires:  python-setuptools
 Requires:       couchdb
 Requires:       python-httplib2
 Requires:       python-simplejson
