@@ -1,7 +1,7 @@
 %define srcname CouchDB
 Name:           python-couchdb
 Version:        0.6.1
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        A Python library for working with CouchDB
 
 Group:          Development/Python
@@ -13,7 +13,6 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:      noarch
 %py_requires -d
 BuildRequires:  python-setuptools
-Requires:       couchdb
 Requires:       python-httplib2
 Requires:       python-simplejson
 
