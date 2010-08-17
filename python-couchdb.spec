@@ -1,37 +1,27 @@
 %define srcname CouchDB
 Name:           python-couchdb
-Version:        0.7
-Release:        %mkrel 2
+Version:        0.8
+Release:        %mkrel 1
 Summary:        A Python library for working with CouchDB
 
 Group:          Development/Python
 License:        BSD
 URL:            http://code.google.com/p/couchdb-python/
 Source0:        http://pypi.python.org/packages/source/C/CouchDB/%{srcname}-%{version}.tar.gz
-Patch0:         python-couchdb-shebang.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:      noarch
 %py_requires -d
 BuildRequires:  python-setuptools
 Requires:       python-simplejson
-
-%package devel
-Summary:        The  API reference files for CouchDB 
-Group:          Development/Python
-Requires:       %{name} = %{version}
-
+# remove in 2013 once 2010.0 is not supported anymore
+Obsoletes:       %{name}-devel < 0.8
 
 %description
 Providing a convenient high level interface for the CouchDB server.
 
-%description devel
-CouchDB python binding API reference documentation for use in development. 
-
 
 %prep
 %setup -q -n %{srcname}-%{version}
-%patch0 -p1
-
 
 %build
 python setup.py build
@@ -51,13 +41,10 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root,-)
 %doc ChangeLog.txt COPYING README.txt 
+%doc doc/
 %{_bindir}/couchdb-dump
 %{_bindir}/couchdb-load
 %{_bindir}/couchdb-replicate
 %{_bindir}/couchpy
 %{python_sitelib}/CouchDB-%{version}-py%{python_version}.egg-info
 %{python_sitelib}/couchdb
-
-%files devel
-%defattr(-,root,root,-)
-%doc doc/api doc/index.html
