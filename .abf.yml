@@ -1,2 +1,4 @@
+removed_sources:
+  CouchDB-0.8.tar.gz: 35004c40084097f03dc06a20556b84762e0214c7
 sources:
-  "CouchDB-0.8.tar.gz": 35004c40084097f03dc06a20556b84762e0214c7
+  CouchDB-0.9.tar.gz: 323e3460da6064a0aeed63a07febc6ec82479f57

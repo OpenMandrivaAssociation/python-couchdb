@@ -1,14 +1,13 @@
 %define srcname CouchDB
 Name:           python-couchdb
-Version:        0.8
-Release:        %mkrel 2
+Version:        0.9
+Release:        1
 Summary:        A Python library for working with CouchDB
 
 Group:          Development/Python
 License:        BSD
 URL:            http://code.google.com/p/couchdb-python/
-Source0:        http://pypi.python.org/packages/source/C/CouchDB/%{srcname}-%{version}.tar.gz
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Source0:        http://pypi.python.org/packages/source/C/CouchDB/CouchDB-%{version}.tar.gz
 BuildArch:      noarch
 %py_requires -d
 BuildRequires:  python-setuptools
@@ -28,15 +27,13 @@ python setup.py build
 
 
 %install
-rm -rf %{buildroot}
 python setup.py install --skip-build --root %{buildroot}
 
 # calm rpmlint down
-find  %{buildroot}/%{python_sitelib}/couchdb -name \*.py -print0 | xargs --null chmod 0644
+find  %{buildroot}/%{py_puresitedir}/couchdb -name \*.py -print0 | xargs --null chmod 0644
 
 
 %clean
-rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
@@ -46,8 +43,8 @@ rm -rf %{buildroot}
 %{_bindir}/couchdb-load
 %{_bindir}/couchdb-replicate
 %{_bindir}/couchpy
-%{python_sitelib}/CouchDB-%{version}-py%{python_version}.egg-info
-%{python_sitelib}/couchdb
+%{py_puresitedir}/CouchDB-%{version}-py%{py_ver}.egg-info
+%{py_puresitedir}/couchdb
 
 
 %changelog
@@ -78,4 +75,5 @@ rm -rf %{buildroot}
 - Use %%py_requires macro
 - First Mandriva package based on Fedora's
 - create python-couchdb
+
 
