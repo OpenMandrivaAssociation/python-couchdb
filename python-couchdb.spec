@@ -1,7 +1,7 @@
 %define srcname CouchDB
 Name:           python-couchdb
 Version:        0.9
-Release:        1
+Release:        2
 Summary:        A Python library for working with CouchDB
 
 Group:          Development/Python
