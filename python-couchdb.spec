@@ -9,8 +9,8 @@ License:        BSD
 URL:            http://code.google.com/p/couchdb-python/
 Source0:        http://pypi.python.org/packages/source/C/CouchDB/CouchDB-%{version}.tar.gz
 BuildArch:      noarch
-BuildRequires:  pkgcinfig(python)
-BuildRequires:  pkgcinfig(python2)
+BuildRequires:  pkgconfig(python)
+BuildRequires:  pkgconfig(python2)
 BuildRequires:  python-setuptools
 BuildRequires:  python2-setuptools
 Requires:       python3dist(simplejson)
