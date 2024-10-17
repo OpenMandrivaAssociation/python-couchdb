@@ -6,7 +6,7 @@ Summary:        A Python library for working with CouchDB
 
 Group:          Development/Python
 License:        BSD
-URL:            http://code.google.com/p/couchdb-python/
+URL:            https://code.google.com/p/couchdb-python/
 Source0:        http://pypi.python.org/packages/source/C/CouchDB/CouchDB-%{version}.tar.gz
 BuildArch:      noarch
 BuildRequires:  pkgconfig(python)
